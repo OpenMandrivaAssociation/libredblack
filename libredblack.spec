@@ -10,6 +10,7 @@ Group:		System/Libraries
 License:	GPL
 URL:		http://libredblack.sourceforge.net/
 Source0:	%{name}-%{version}.tar.bz2
+Patch0:		libredblack-typo.diff
 BuildRequires:	python-devel
 BuildRequires:	autoconf2.5
 BuildRequires:	automake1.7
@@ -41,6 +42,7 @@ have these header and object files available for creating the executables.
 %prep
 
 %setup -q -n %{name}-%{version}
+%patch0 -p0
 
 %build
 

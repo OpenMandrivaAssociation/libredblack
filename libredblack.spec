@@ -1,10 +1,11 @@
 %define	major 0
-%define libname	%mklibname redblack %{major}
+%define libname %mklibname redblack %{major}
+%define develname %mklibname redblack -d
 
 Summary:	Library for handling red-black tree searching algorithm
 Name:		libredblack
 Version:	1.3
-Release:	%mkrel 4
+Release:	%mkrel 5
 Group:		System/Libraries
 License:	GPL
 URL:		http://libredblack.sourceforge.net/
@@ -25,14 +26,15 @@ Group:          System/Libraries
 %description -n	%{libname}
 This implements the redblack balanced tree algorithm.
 
-%package -n	%{libname}-devel
+%package -n	%{develname}
 Summary:	Libraries and header files for the %{libname} library
 Group:		Development/C
-Provides:	%{libname}-devel = %{version}
-Provides:	%{name}-devel = %{version}
 Requires:	%{libname} = %{version}
+Provides:	%{name} = %{version}-%{release}
+Provides:	%{name}-devel = %{version}-%{release}
+Obsoletes:	%{mklibname redblack 0 -d}
 
-%description -n	%{libname}-devel
+%description -n	%{develname}
 To develop programs based upon the libredblack library, the system needs to 
 have these header and object files available for creating the executables.
 
@@ -63,7 +65,7 @@ have these header and object files available for creating the executables.
 %doc AUTHORS ChangeLog README
 %{_libdir}/*.so.*
 
-%files -n %{libname}-devel
+%files -n %{develname}
 %defattr(-,root,root)
 %doc example*.c example*.rb
 %{_bindir}/rbgen
@@ -74,5 +76,3 @@ have these header and object files available for creating the executables.
 %{_mandir}/man1/*
 %{_mandir}/man3/*
 %{_datadir}/libredblack
-
-

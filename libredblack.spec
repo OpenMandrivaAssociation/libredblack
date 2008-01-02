@@ -15,6 +15,7 @@ BuildRequires:	python-devel
 BuildRequires:	autoconf2.5
 BuildRequires:	automake1.7
 BuildRequires:	libtool
+BuildRoot:	%{_tmppath}/%{name}-%{version}-root
 
 %description 
 This implements the redblack balanced tree algorithm.

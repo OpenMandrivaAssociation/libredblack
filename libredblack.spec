@@ -5,7 +5,7 @@
 Summary:	Library for handling red-black tree searching algorithm
 Name:		libredblack
 Version:	1.3
-Release:	%mkrel 6
+Release:	%mkrel 7
 Group:		System/Libraries
 License:	GPL
 URL:		http://libredblack.sourceforge.net/
@@ -15,7 +15,7 @@ BuildRequires:	python-devel
 BuildRequires:	autoconf2.5
 BuildRequires:	automake1.7
 BuildRequires:	libtool
-BuildRoot:	%{_tmppath}/%{name}-%{version}-root
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description 
 This implements the redblack balanced tree algorithm.
@@ -51,12 +51,9 @@ have these header and object files available for creating the executables.
 %make
 
 %install
-[ "%{buildroot}" != "/" ] && rm -rf %{buildroot}
+rm -rf %{buildroot}
 
 %makeinstall
-
-%clean
-[ "%{buildroot}" != "/" ] && rm -rf %{buildroot}
 
 %if %mdkversion < 200900
 %post -n %{libname} -p /sbin/ldconfig
@@ -65,6 +62,9 @@ have these header and object files available for creating the executables.
 %if %mdkversion < 200900
 %postun -n %{libname} -p /sbin/ldconfig
 %endif
+
+%clean
+rm -rf %{buildroot}
 
 %files -n %{libname}
 %defattr(-,root,root)

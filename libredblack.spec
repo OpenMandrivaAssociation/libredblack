@@ -5,16 +5,12 @@
 Summary:	Library for handling red-black tree searching algorithm
 Name:		libredblack
 Version:	1.3
-Release:	%mkrel 7
+Release:	%mkrel 8
 Group:		System/Libraries
-License:	GPL
+License:	LGPLv2+
 URL:		http://libredblack.sourceforge.net/
 Source0:	%{name}-%{version}.tar.bz2
 Patch0:		libredblack-typo.diff
-BuildRequires:	python-devel
-BuildRequires:	autoconf2.5
-BuildRequires:	automake1.7
-BuildRequires:	libtool
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description 
@@ -45,15 +41,13 @@ have these header and object files available for creating the executables.
 %patch0 -p0
 
 %build
-
 %configure2_5x
-
 %make
 
 %install
 rm -rf %{buildroot}
 
-%makeinstall
+%makeinstall_std
 
 %if %mdkversion < 200900
 %post -n %{libname} -p /sbin/ldconfig

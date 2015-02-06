@@ -5,7 +5,7 @@
 Summary:	Library for handling red-black tree searching algorithm
 Name:		libredblack
 Version:	1.3
-Release:	11
+Release:	12
 Group:		System/Libraries
 License:	LGPLv2+
 URL:		http://libredblack.sourceforge.net/

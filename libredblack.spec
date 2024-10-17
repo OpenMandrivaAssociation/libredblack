@@ -8,7 +8,7 @@ Version:	1.3
 Release:	12
 Group:		System/Libraries
 License:	LGPLv2+
-URL:		http://libredblack.sourceforge.net/
+URL:		https://libredblack.sourceforge.net/
 Source0:	%{name}-%{version}.tar.bz2
 Patch0:		libredblack-typo.diff
 

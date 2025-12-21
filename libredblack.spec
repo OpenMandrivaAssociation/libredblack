@@ -12,6 +12,11 @@ URL:		https://libredblack.sourceforge.net/
 Source0:	%{name}-%{version}.tar.bz2
 Patch0:		libredblack-typo.diff
 
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 %description 
 This implements the redblack balanced tree algorithm.
 
